@@ -1,0 +1,487 @@
+:root {
+    --void: #080606;
+    --panel: rgba(18, 10, 10, 0.88);
+    --panel-edge: rgba(163, 31, 31, 0.35);
+    --text: #e8e0d8;
+    --text-soft: rgba(232, 224, 216, 0.58);
+    --red: #a31f1f;
+    --red-bright: #c93a3a;
+    --red-glow: rgba(201, 58, 58, 0.45);
+    --amber: #c9a227;
+    --amber-glow: rgba(201, 164, 39, 0.35);
+    --font-display: "Bebas Neue", sans-serif;
+    --font-body: "Crimson Pro", Georgia, serif;
+    --font-mono: "Share Tech Mono", monospace;
+    --ease: cubic-bezier(0.33, 1, 0.45, 1);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+    font-weight: 400;
+    color: var(--text);
+    background: var(--void);
+    overflow-x: hidden;
+}
+
+/* Fond — ambiance RE : froid, rougeâtre */
+.scene-bg {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    background: url("../transport-routier copie.jpg") center/cover no-repeat;
+    filter: saturate(0.35) contrast(1.15) brightness(0.32) sepia(0.25);
+}
+
+.scene-bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 90% 80% at 50% 20%, rgba(163, 31, 31, 0.12) 0%, transparent 50%),
+        radial-gradient(ellipse 100% 100% at 50% 100%, rgba(0, 0, 0, 0.92) 0%, transparent 55%),
+        linear-gradient(180deg, rgba(12, 6, 6, 0.4) 0%, rgba(5, 3, 3, 0.97) 100%);
+}
+
+.vignette {
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.85);
+}
+
+.grain {
+    position: fixed;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    opacity: 0.06;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.alert-pulse {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    z-index: 4;
+    background: var(--red);
+    opacity: 0;
+    animation: alert-breathe 6s ease-in-out infinite;
+}
+
+@keyframes alert-breathe {
+    0%, 88%, 100% { opacity: 0; }
+    92%, 96% { opacity: 0.7; box-shadow: 0 0 20px var(--red-glow); }
+}
+
+.app {
+    position: relative;
+    z-index: 3;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px clamp(1rem, 4vw, 2rem);
+    border-bottom: 1px solid var(--panel-edge);
+    background: rgba(8, 4, 4, 0.8);
+}
+
+.top-link {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-style: italic;
+    color: var(--text-soft);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.top-link:hover {
+    color: var(--red-bright);
+}
+
+.brand {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    letter-spacing: 0.28em;
+    color: var(--text);
+}
+
+.brand span {
+    color: var(--red-bright);
+}
+
+.top-date {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--text-soft);
+    letter-spacing: 0.08em;
+}
+
+.intro {
+    padding: 2.25rem clamp(1.25rem, 5vw, 2.5rem) 1.25rem;
+    max-width: 540px;
+}
+
+.file-tag {
+    margin: 0 0 0.6rem;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    color: var(--red-bright);
+    letter-spacing: 0.12em;
+    opacity: 0.85;
+}
+
+.intro h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2.1rem, 9vw, 3rem);
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    line-height: 1;
+    margin: 0;
+    color: var(--text);
+    text-shadow: 0 4px 30px rgba(0, 0, 0, 0.9);
+}
+
+.intro-text {
+    margin: 1rem 0 0;
+    font-size: 1.1rem;
+    line-height: 1.65;
+    color: var(--text-soft);
+    font-style: italic;
+}
+
+.missions {
+    padding: 0 clamp(1rem, 4vw, 2rem) 1.75rem;
+    max-width: 560px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.section-legend {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    color: var(--text-soft);
+    margin: 0 0 12px;
+    text-transform: uppercase;
+}
+
+.mission {
+    position: relative;
+    display: grid;
+    grid-template-columns: 4px 1fr auto;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 18px 18px 14px;
+    margin-bottom: 8px;
+    text-decoration: none;
+    color: inherit;
+    background: var(--panel);
+    border: 1px solid rgba(80, 50, 50, 0.35);
+    transition: border-color 0.4s var(--ease), background 0.4s, transform 0.4s var(--ease);
+}
+
+.mission__mark {
+    width: 4px;
+    height: 100%;
+    min-height: 40px;
+    background: var(--red);
+    opacity: 0.35;
+    transition: opacity 0.4s, box-shadow 0.4s;
+}
+
+.mission:hover,
+.mission:focus-visible {
+    border-color: var(--panel-edge);
+    background: rgba(28, 14, 14, 0.92);
+    transform: translateX(4px);
+    outline: none;
+}
+
+.mission:hover .mission__mark,
+.mission:focus-visible .mission__mark {
+    opacity: 1;
+    box-shadow: 0 0 14px var(--red-glow);
+}
+
+.mission__title {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    letter-spacing: 0.1em;
+    margin: 0 0 4px;
+}
+
+.mission__sub {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--text-soft);
+    font-style: italic;
+}
+
+.mission__enter {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    color: var(--text-soft);
+    opacity: 0;
+    transition: opacity 0.35s, color 0.35s;
+}
+
+.mission:hover .mission__enter,
+.mission:focus-visible .mission__enter {
+    opacity: 1;
+    color: var(--red-bright);
+}
+
+/* Carte — style RE */
+.map-panel {
+    position: relative;
+    margin: 0 clamp(1rem, 4vw, 2rem) 2.5rem;
+    padding: 22px 20px 24px;
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
+    background: var(--panel);
+    border: 1px solid var(--panel-edge);
+}
+
+.map-panel__corners::before,
+.map-panel__corners::after {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-color: var(--red);
+    border-style: solid;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.map-panel__corners::before {
+    top: 8px;
+    left: 8px;
+    border-width: 2px 0 0 2px;
+}
+
+.map-panel__corners::after {
+    bottom: 8px;
+    right: 8px;
+    border-width: 0 2px 2px 0;
+}
+
+.map-panel h2 {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    letter-spacing: 0.2em;
+    margin: 0 0 6px;
+}
+
+.map-panel__hint {
+    margin: 0 0 18px;
+    font-size: 0.95rem;
+    color: var(--text-soft);
+    font-style: italic;
+}
+
+.road-screen {
+    position: relative;
+    height: 128px;
+    background: rgba(0, 0, 0, 0.55);
+    border: 1px solid rgba(163, 31, 31, 0.25);
+    overflow: hidden;
+}
+
+.road-fog {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(0,0,0,0.5) 0%, transparent 30%, transparent 70%, rgba(0,0,0,0.5) 100%);
+    pointer-events: none;
+}
+
+.road-line {
+    position: absolute;
+    left: 8%;
+    right: 8%;
+    top: 54%;
+    height: 3px;
+    background: rgba(60, 40, 40, 0.6);
+    transform: translateY(-50%);
+}
+
+.road-line__fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--red), var(--red-bright));
+    box-shadow: 0 0 16px var(--red-glow);
+    transition: width 1.35s var(--ease);
+}
+
+.road-truck {
+    position: absolute;
+    top: 54%;
+    left: 8%;
+    width: 56px;
+    margin-top: -22px;
+    margin-left: -28px;
+    z-index: 2;
+    transition: left 1.35s var(--ease);
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.8));
+}
+
+.road-truck__svg {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.road-truck__light {
+    position: absolute;
+    left: 70%;
+    top: 20%;
+    width: 40px;
+    height: 30px;
+    background: radial-gradient(ellipse, var(--amber-glow) 0%, transparent 70%);
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.road-truck.is-moving .road-truck__light {
+    opacity: 1;
+    animation: light-soft 2s ease-in-out infinite;
+}
+
+.road-truck.is-moving .road-truck__svg {
+    animation: truck-sway 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes light-soft {
+    0%, 100% { opacity: 0.7; }
+    50% { opacity: 1; }
+}
+
+@keyframes truck-sway {
+    to { transform: translateY(-1px); }
+}
+
+.zones {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+    margin-top: 16px;
+}
+
+.zone {
+    padding: 10px 4px;
+    border: 1px solid transparent;
+    background: transparent;
+    color: var(--text-soft);
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-style: italic;
+    cursor: pointer;
+    transition: color 0.3s, border-color 0.3s, background 0.3s;
+}
+
+.zone:hover,
+.zone:focus-visible,
+.zone.is-active {
+    color: var(--text);
+    border-color: rgba(163, 31, 31, 0.4);
+    background: rgba(163, 31, 31, 0.1);
+    outline: none;
+}
+
+.zone.is-active {
+    color: var(--red-bright);
+    font-style: normal;
+}
+
+.map-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.action-btn {
+    flex: 1;
+    min-width: 110px;
+    padding: 12px 14px;
+    border: 1px solid rgba(100, 60, 60, 0.5);
+    background: rgba(0, 0, 0, 0.4);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-style: italic;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    transition: border-color 0.3s, color 0.3s, background 0.3s;
+}
+
+.action-btn:hover {
+    border-color: var(--red);
+    color: var(--red-bright);
+}
+
+.action-btn--main {
+    font-style: normal;
+    font-family: var(--font-display);
+    letter-spacing: 0.12em;
+    background: rgba(163, 31, 31, 0.25);
+    border-color: var(--red);
+}
+
+.action-btn--main:hover {
+    background: rgba(163, 31, 31, 0.45);
+    color: var(--text);
+}
+
+.map-status {
+    margin-top: 14px;
+    font-size: 0.95rem;
+    color: var(--text-soft);
+    font-style: italic;
+    min-height: 1.5em;
+}
+
+.map-status a {
+    color: var(--red-bright);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(201, 58, 58, 0.35);
+    font-style: normal;
+}
+
+.map-status a:hover {
+    color: var(--text);
+}
+
+@media (max-width: 480px) {
+    .top-date {
+        display: none;
+    }
+
+    .mission {
+        grid-template-columns: 4px 1fr;
+    }
+
+    .mission__enter {
+        display: none;
+    }
+}

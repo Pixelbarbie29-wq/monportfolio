@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="LinkTruck Mobile — interface survival horror, ambiance Resident Evil.">
+    <title>LinkTruck — Zone de transit</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Crimson+Pro:ital,wght@0,400;0,500;1,400&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="scene-bg" aria-hidden="true"></div>
+    <div class="vignette" aria-hidden="true"></div>
+    <div class="grain" aria-hidden="true"></div>
+    <div class="alert-pulse" aria-hidden="true"></div>
+
+    <div class="app">
+        <header class="top-bar">
+            <a href="../portfolio.html#projets" class="top-link">Retour</a>
+            <span class="brand">LINK<span>TRUCK</span></span>
+            <span class="top-date" id="topDate" aria-hidden="true"></span>
+        </header>
+
+        <section class="intro">
+            <p class="file-tag">Fichier — Transit nocturne</p>
+            <h1>La route est encore ouverte</h1>
+            <p class="intro-text">Chaque kilomètre compte. Choisis où tu dois aller — entreprise, chauffeur, ou une autre zone du réseau.</p>
+        </section>
+
+        <nav class="missions" aria-label="Accès disponibles">
+            <p class="section-legend">Accès sécurisés</p>
+
+            <a href="../entreprise%20copie.html" class="mission">
+                <span class="mission__mark" aria-hidden="true"></span>
+                <div>
+                    <p class="mission__title">Contrat entreprise</p>
+                    <p class="mission__sub">Publier une mission · trouver un chauffeur</p>
+                </div>
+                <span class="mission__enter">Entrer</span>
+            </a>
+
+            <a href="../chauffeur%20copie.html" class="mission">
+                <span class="mission__mark" aria-hidden="true"></span>
+                <div>
+                    <p class="mission__title">Espace chauffeur</p>
+                    <p class="mission__sub">Profil · disponibilité · prise de route</p>
+                </div>
+                <span class="mission__enter">Entrer</span>
+            </a>
+
+            <a href="../linktruck-v2/index.html" class="mission">
+                <span class="mission__mark" aria-hidden="true"></span>
+                <div>
+                    <p class="mission__title">Réseau complet</p>
+                    <p class="mission__sub">Version web avancée du projet</p>
+                </div>
+                <span class="mission__enter">Entrer</span>
+            </a>
+        </nav>
+
+        <section class="map-panel" aria-label="Carte de la zone">
+            <div class="map-panel__corners" aria-hidden="true"></div>
+            <h2>Plan de la zone</h2>
+            <p class="map-panel__hint">Le camion avance vers la destination choisie.</p>
+
+            <div class="road-screen">
+                <div class="road-fog" aria-hidden="true"></div>
+                <div class="road-line">
+                    <div class="road-line__fill" id="routeProgress"></div>
+                </div>
+                <div class="road-truck" id="routeMarker" aria-label="Position du camion">
+                    <span class="road-truck__light" aria-hidden="true"></span>
+                    <svg class="road-truck__svg" viewBox="0 0 56 28" aria-hidden="true">
+                        <g class="truck-body">
+                            <rect x="2" y="10" width="26" height="12" rx="1" fill="#1a1514" stroke="#4a3f3d" stroke-width="1"/>
+                            <rect x="28" y="6" width="18" height="16" rx="2" fill="#2a2220" stroke="#5c4a48" stroke-width="1"/>
+                            <rect x="32" y="10" width="8" height="6" rx="0.5" fill="#3d302e" opacity="0.8"/>
+                            <circle class="headlight" cx="46" cy="12" r="2" fill="#e8c47a"/>
+                            <circle class="headlight" cx="46" cy="16" r="2" fill="#e8c47a"/>
+                            <circle cx="4" cy="14" r="1.5" fill="#a31f1f" opacity="0.9"/>
+                        </g>
+                        <g class="truck-wheels">
+                            <circle cx="12" cy="24" r="3" fill="#0a0808" stroke="#3a3230"/>
+                            <circle cx="38" cy="24" r="3" fill="#0a0808" stroke="#3a3230"/>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="zones">
+                <button type="button" class="zone is-active" data-dest="portfolio">Accueil</button>
+                <button type="button" class="zone" data-dest="v1">Ancienne base</button>
+                <button type="button" class="zone" data-dest="v2">Secteur neuf</button>
+                <button type="button" class="zone" data-dest="contact">Contact</button>
+            </div>
+
+            <div class="map-actions">
+                <button type="button" class="action-btn" id="goBtn">Prochain lieu</button>
+                <a href="../portfolio.html#projets" class="action-btn action-btn--main" id="openDest">Continuer</a>
+            </div>
+
+            <p class="map-status" id="journeyLink"></p>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,283 @@
+body {
+    padding: 0;
+    background: transparent;
+}
+
+.scene {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: url('thelastofus2.jpg') center/cover no-repeat;
+    height: min(80vh, 720px);
+}
+
+.content {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    width: 100%;
+    max-width: 980px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.scene h1 {
+    color: #dbe9ff;
+    margin: 0;
+    font-size: clamp(2rem, 5vw, 3rem);
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.6);
+}
+
+.scene p {
+    color: #dce6ff;
+    margin: 16px auto 0;
+    font-size: 1.125rem;
+    max-width: 640px;
+    text-shadow: 0 1px 12px rgba(0, 0, 0, 0.5);
+}
+
+.hero-links {
+    list-style: none;
+    padding: 0;
+    margin: 20px auto 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+}
+
+.hero-links a {
+    padding: 12px 24px;
+    background: rgba(29, 55, 92, 0.88);
+    color: #e8f3ff;
+    border-radius: 10px;
+    font-size: 1.05rem;
+    text-decoration: none;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 10px 25px rgba(8, 21, 44, 0.28);
+}
+
+.hero-links a:hover {
+    color: #fff;
+    background: rgba(62, 115, 194, 0.96);
+    transform: translateY(-3px);
+}
+
+.parallax {
+    height: 320px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.parallax-1 {
+    background-image: url('transport-routier copie.jpg');
+}
+
+.parallax-2 {
+    background-image: url('routes-mythiques-usa_91250.jpg');
+}
+
+.parallax-3 {
+    background-image: url('imagesai.jpeg');
+}
+
+@media (max-width: 768px) {
+    .parallax {
+        background-attachment: scroll;
+        height: 220px;
+    }
+
+    #projets,
+    #competences {
+        background-attachment: scroll;
+    }
+}
+
+.section-content {
+    padding: 56px 24px;
+    text-align: center;
+    background: transparent;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#projets {
+    background-image: url('transport-routier copie.jpg');
+    background-attachment: fixed;
+}
+
+#competences {
+    background-image: url('routes-mythiques-usa_91250.jpg');
+    background-attachment: fixed;
+}
+
+.section-title {
+    color: #dbe9ff;
+    font-size: 2rem;
+    margin: 0 0 32px;
+    text-shadow: 0 2px 16px rgba(0, 0, 0, 0.75);
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.section-card {
+    display: block;
+    padding: 32px 28px;
+    border-radius: 20px;
+    background: linear-gradient(180deg, rgba(27, 67, 120, 0.96), rgba(17, 44, 84, 0.88));
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
+    text-decoration: none;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.section-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 32px 80px rgba(0, 0, 0, 0.35);
+}
+
+.section-card h2,
+.section-card h3 {
+    color: #dbe9ff;
+    margin: 0 0 12px;
+    font-size: 1.35rem;
+}
+
+.section-card p {
+    color: #c7daf9;
+    font-size: 1rem;
+    line-height: 1.65;
+    margin: 0;
+}
+
+.section-card--static {
+    display: block;
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: left;
+    cursor: default;
+}
+
+.section-card--static:hover {
+    transform: none;
+}
+
+.skills-list {
+    margin: 0;
+    padding-left: 1.25rem;
+    color: #c7daf9;
+    line-height: 1.85;
+}
+
+.skills-list li {
+    margin-bottom: 6px;
+}
+
+.version-badge {
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.version-badge--v1 {
+    background: rgba(62, 115, 194, 0.25);
+    color: #c7daf9;
+    border: 1px solid rgba(201, 168, 76, 0.35);
+}
+
+.version-badge--v2 {
+    background: rgba(212, 168, 83, 0.25);
+    color: #f0d090;
+    border: 1px solid rgba(212, 168, 83, 0.45);
+}
+
+.card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 14px;
+}
+
+.tag {
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.tag--v1 {
+    background: rgba(62, 115, 194, 0.22);
+    color: #c7daf9;
+}
+
+.tag--v2 {
+    background: rgba(212, 168, 83, 0.2);
+    color: #f0d090;
+}
+
+.card-cta {
+    display: inline-block;
+    margin-top: 16px;
+    color: #9ec1ff;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.project-intro {
+    color: var(--color-text-muted);
+    max-width: 640px;
+    margin: -12px auto 32px;
+}
+
+.project-grid--hub {
+    margin-bottom: 32px;
+}
+
+.compare-note {
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.compare-note ul {
+    color: var(--color-text-muted);
+    line-height: 1.75;
+}
+
+.page-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+}
+
+.section-card--featured {
+    grid-column: 1 / -1;
+    text-align: center;
+}
+
+@media (min-width: 900px) {
+    .section-card--featured {
+        max-width: 100%;
+    }
+}

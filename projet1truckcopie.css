@@ -1,0 +1,299 @@
+/* v1 — palette harmonisée portfolio / v2 (bleu nuit, doré, sauge atténuée) */
+:root {
+    --lt-bg-overlay: rgba(15, 29, 52, 0.5);
+    --lt-text: #e8f3ff;
+    --lt-text-soft: #c7daf9;
+    --lt-sage: #8a9e86;
+    --lt-sage-dim: #6d7f6a;
+    --lt-gold: #c9a84c;
+    --lt-gold-light: #e8d48a;
+    --lt-blue: #3e73c2;
+    --lt-blue-hover: #62a3ff;
+    --lt-panel: rgba(17, 44, 84, 0.55);
+    --lt-border: rgba(255, 255, 255, 0.12);
+}
+
+body.page-linktruck {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-family: var(--font-family, "Segoe UI", system-ui, sans-serif);
+    color: var(--lt-text);
+    background: url('camion copie.avif') center/cover no-repeat fixed;
+    position: relative;
+}
+
+body.page-linktruck.chauffeur-page {
+    background: url('transport-routier copie.jpg') center/cover no-repeat fixed;
+}
+
+body.page-linktruck::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        var(--lt-bg-overlay) 0%,
+        rgba(11, 24, 44, 0.65) 100%
+    );
+    z-index: 0;
+    pointer-events: none;
+}
+
+.version-label {
+    display: inline-block;
+    margin: 0 auto 16px;
+    padding: 8px 16px;
+    border-radius: 999px;
+    background: rgba(62, 115, 194, 0.2);
+    border: 1px solid rgba(201, 168, 76, 0.35);
+    color: var(--lt-gold-light);
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 0.04em;
+}
+
+.page-content {
+    position: relative;
+    z-index: 1;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 32px 20px 100px;
+    text-align: center;
+}
+
+.page-content > h1 {
+    font-size: 2.2rem;
+    color: var(--lt-gold-light);
+    margin-bottom: 1.5rem;
+}
+
+.hero {
+    background: var(--lt-panel);
+    border: 1px solid var(--lt-border);
+    backdrop-filter: blur(10px);
+    padding: 30px 20px;
+    border-radius: 16px;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+    animation: appear 0.8s ease forwards;
+}
+
+h1 {
+    font-size: 2.8rem;
+    margin-bottom: 0.5rem;
+    color: var(--lt-gold-light);
+}
+
+h2 {
+    font-size: 1.6rem;
+    margin: 0.5rem auto 1rem;
+    color: #1a2a3a;
+    display: inline-block;
+    background: rgba(232, 243, 255, 0.92);
+    padding: 12px 18px;
+    border-radius: 12px;
+}
+
+h3,
+h4 {
+    margin: 0.5rem 0;
+    color: var(--lt-text-soft);
+}
+
+p {
+    margin: 1rem auto;
+    line-height: 1.7;
+    max-width: 760px;
+    color: var(--lt-text-soft);
+}
+
+.join-us {
+    display: block;
+    color: var(--lt-gold);
+    font-weight: 700;
+    font-size: 1.15rem;
+    letter-spacing: 0.08em;
+    margin: 30px auto 20px;
+    position: relative;
+    z-index: 2;
+    animation: pulse 2s ease-in-out infinite alternate;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 30px;
+    z-index: 2;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 190px;
+    padding: 14px 24px;
+    border-radius: 10px;
+    background: linear-gradient(180deg, rgba(62, 115, 194, 0.95), rgba(46, 90, 160, 0.95));
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--lt-text);
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 14px 30px rgba(8, 21, 44, 0.35);
+    transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+    background: linear-gradient(180deg, rgba(98, 163, 255, 0.95), rgba(62, 115, 194, 0.95));
+    transform: translateY(-3px);
+    box-shadow: 0 18px 36px rgba(62, 115, 194, 0.3);
+}
+
+.btn-secondary {
+    background: rgba(29, 55, 92, 0.75);
+    border-color: var(--lt-border);
+}
+
+.btn-secondary:hover {
+    background: rgba(46, 90, 160, 0.85);
+}
+
+.contact-box {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    max-width: 280px;
+    background: rgba(232, 243, 255, 0.95);
+    color: #1a2a3a;
+    padding: 18px 20px;
+    border-radius: 14px;
+    border: 1px solid var(--lt-border);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.25);
+    text-align: left;
+    z-index: 10;
+}
+
+.contact-box h5 {
+    margin: 0 0 10px;
+    color: #1a2a3a;
+}
+
+.contact-box p {
+    margin: 4px 0;
+    color: #2a3f5c;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    from {
+        transform: translateY(0);
+        opacity: 0.85;
+    }
+
+    to {
+        transform: translateY(-4px);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 700px) {
+    .page-content {
+        padding: 30px 15px 80px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .btn {
+        min-width: 150px;
+        padding: 12px 18px;
+    }
+
+    .contact-box {
+        left: 50%;
+        transform: translateX(-50%);
+        width: calc(100% - 40px);
+    }
+}
+
+.form-card {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: min(280px, calc(100% - 32px));
+    max-width: 280px;
+    background: rgba(11, 24, 44, 0.94);
+    border: 1px solid var(--lt-border);
+    color: var(--lt-text);
+    font-weight: 600;
+    padding: 18px;
+    border-radius: 14px;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4);
+    z-index: 20;
+}
+
+.form-card h3,
+.form-card label,
+.form-card button {
+    font-weight: 600;
+    color: var(--lt-text);
+}
+
+.form-card input,
+.form-card textarea {
+    width: 100%;
+    margin-top: 8px;
+    margin-bottom: 14px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 1px solid var(--lt-border);
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--lt-text);
+}
+
+.form-card textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.form-card button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(180deg, var(--lt-blue), #2e5aa0);
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.form-card button:hover {
+    background: var(--lt-blue-hover);
+}
+
+.form-card--inline {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto 24px;
+}
+
+@media (max-width: 768px) {
+    body.page-linktruck {
+        background-attachment: scroll;
+    }
+}
