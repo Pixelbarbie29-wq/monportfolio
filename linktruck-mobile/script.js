@@ -20,7 +20,7 @@ const destinations = {
         percent: 8,
         truckLeft: "8%",
         label: "Accueil du portfolio",
-        href: "../portfolio.html#projets",
+        href: "../index.html#projets",
     },
     v1: {
         percent: 36,
