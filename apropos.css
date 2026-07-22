@@ -11,7 +11,28 @@ body {
 }
 
 @media (max-width: 768px) {
-    body {
-        background-attachment: scroll;
-    }
+body {
+    background-attachment: scroll;
+}
+}
+
+/* Carte À propos calée à gauche */
+main.page-main {
+    max-width: none;
+    width: 100%;
+    margin: 0;
+  display: flex;
+  box-sizing: border-box;
+  padding: 0 4%;
+}
+
+main.page-main .page-card {
+  max-width: 400px;
+  margin-left: 0;
+  margin-right: auto;
+  text-align: left;
+}
+
+main.page-main h1 {
+  text-align: center;
 }
