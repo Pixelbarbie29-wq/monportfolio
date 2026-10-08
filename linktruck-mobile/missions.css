@@ -1,0 +1,299 @@
+/* LinkTruck Mobile — page « Missions »
+   S'appuie sur styles.css (variables --red, --text, --font-mono...). */
+
+.demo-note {
+    display: inline-block;
+    margin: 1rem 0 0;
+    padding: 6px 10px;
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    color: var(--amber);
+    border: 1px dashed rgba(201, 162, 39, 0.4);
+}
+
+/* ---------- Filtres ---------- */
+.m-filters {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    align-items: end;
+    width: calc(100% - 2 * clamp(1rem, 4vw, 2rem));
+    max-width: 560px;
+    margin: 0 auto 1.25rem;
+    padding: 18px 16px;
+    background: var(--panel);
+    border: 1px solid var(--panel-edge);
+}
+
+.m-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 0;
+}
+
+.m-field--wide {
+    grid-column: 1 / -1;
+}
+
+.m-field label {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-soft);
+}
+
+.m-field input,
+.m-field select {
+    width: 100%;
+    padding: 11px 12px;
+    background: rgba(0, 0, 0, 0.45);
+    border: 1px solid rgba(100, 60, 60, 0.5);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    border-radius: 0;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.m-field select {
+    appearance: none;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='%23c93a3a'%3E%3Cpath d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 32px;
+}
+
+.m-field option {
+    background: #120a0a;
+}
+
+.m-field input:focus,
+.m-field select:focus {
+    border-color: var(--red-bright);
+}
+
+.m-reset {
+    grid-column: 1 / -1;
+}
+
+/* ---------- Résultats ---------- */
+.m-results {
+    width: 100%;
+    max-width: 560px;
+    margin: 0 auto;
+    padding: 0 clamp(1rem, 4vw, 2rem) 3rem;
+}
+
+.m-results .section-legend strong {
+    color: var(--red-bright);
+    font-weight: 400;
+}
+
+.m-list {
+    display: grid;
+    gap: 12px;
+}
+
+/* ---------- Carte d'une mission ---------- */
+.offer {
+    display: grid;
+    grid-template-columns: 4px 1fr;
+    gap: 14px;
+    padding: 16px 16px 16px 12px;
+    background: var(--panel);
+    border: 1px solid rgba(80, 50, 50, 0.35);
+    transition: border-color 0.4s var(--ease), background 0.4s;
+    animation: offer-in 0.45s var(--ease) both;
+}
+
+.offer:hover,
+.offer:focus-within {
+    border-color: var(--panel-edge);
+    background: rgba(28, 14, 14, 0.92);
+}
+
+@keyframes offer-in {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.offer__mark {
+    width: 4px;
+    min-height: 100%;
+    background: var(--red);
+    opacity: 0.45;
+    transition: opacity 0.4s, box-shadow 0.4s;
+}
+
+.offer:hover .offer__mark,
+.offer:focus-within .offer__mark {
+    opacity: 1;
+    box-shadow: 0 0 14px var(--red-glow);
+}
+
+.offer__body {
+    min-width: 0;
+}
+
+.offer__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 0 0 8px;
+}
+
+.tag {
+    padding: 3px 8px;
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-soft);
+    border: 1px solid rgba(100, 60, 60, 0.6);
+}
+
+.tag--red {
+    color: var(--text);
+    background: rgba(163, 31, 31, 0.35);
+    border-color: var(--red);
+}
+
+.offer__title {
+    margin: 0 0 4px;
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    line-height: 1.15;
+}
+
+.offer__company {
+    margin: 0 0 10px;
+    font-size: 0.95rem;
+    font-style: italic;
+    color: var(--text-soft);
+}
+
+.offer__salary {
+    margin: 0 0 10px;
+    font-family: var(--font-mono);
+    font-size: 0.95rem;
+    letter-spacing: 0.06em;
+    color: var(--amber);
+}
+
+.offer__desc {
+    margin: 0 0 8px;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.offer__date {
+    margin: 0 0 12px;
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    color: var(--text-soft);
+}
+
+.offer__details {
+    margin: 0 0 12px;
+    padding: 10px 12px;
+    background: rgba(0, 0, 0, 0.4);
+    border-left: 2px solid var(--red);
+}
+
+.offer__details[hidden] {
+    display: none;
+}
+
+.offer__details .section-legend {
+    margin-bottom: 8px;
+}
+
+.offer__details ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 6px;
+    font-size: 0.95rem;
+    color: var(--text-soft);
+}
+
+.offer__details li::before {
+    content: "— ";
+    color: var(--red-bright);
+}
+
+.offer__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.offer__actions .action-btn {
+    flex: 1;
+}
+
+.action-btn:focus-visible {
+    outline: 2px solid var(--red-bright);
+    outline-offset: 2px;
+}
+
+/* ---------- Aucun résultat ---------- */
+.m-empty {
+    text-align: center;
+    padding: 2.5rem 0.5rem;
+    color: var(--text-soft);
+    font-style: italic;
+}
+
+.m-empty[hidden] {
+    display: none;
+}
+
+.m-empty p {
+    margin: 0 0 1rem;
+}
+
+/* ---------- Message de confirmation ---------- */
+.m-toast {
+    position: fixed;
+    left: 50%;
+    bottom: 16px;
+    z-index: 10;
+    width: min(92vw, 520px);
+    transform: translateX(-50%);
+    padding: 14px 16px;
+    background: #120a0a;
+    border: 1px solid var(--red);
+    font-size: 0.95rem;
+    text-align: center;
+    animation: offer-in 0.35s var(--ease) both;
+}
+
+.m-toast[hidden] {
+    display: none;
+}
+
+@media (min-width: 520px) {
+    .m-filters {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .m-reset {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .offer,
+    .m-toast {
+        animation: none;
+    }
+}

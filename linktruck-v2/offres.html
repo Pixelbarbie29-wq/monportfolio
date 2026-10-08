@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="LinkTruck — consultez les missions en CDD pour chauffeurs routiers, avec le salaire net par mission, et filtrez par région et par permis."
+    />
+    <title>Offres de missions — LinkTruck</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- On réutilise la feuille de style principale (header, boutons, footer...) -->
+    <link rel="stylesheet" href="styles/main.css" />
+    <!-- + une feuille propre à cette page -->
+    <link rel="stylesheet" href="styles/offres.css" />
+  </head>
+  <body>
+    <div class="grain" aria-hidden="true"></div>
+
+    <header class="header scrolled" id="header">
+      <a href="index.html" class="logo" aria-label="LinkTruck — accueil">
+        <span class="logo-mark">LT</span>
+        <span class="logo-text">LINK<span class="logo-accent">TRUCK</span></span>
+      </a>
+      <nav class="nav" aria-label="Navigation principale">
+        <a href="index.html#vision">Vision</a>
+        <a href="index.html#chauffeurs">Chauffeurs</a>
+        <a href="index.html#entreprises">Entreprises</a>
+        <a href="offres.html" aria-current="page" class="nav-current">Offres</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="../index.html#projets" class="nav-back">&larr; Portfolio</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </header>
+
+    <div class="mobile-nav" id="mobileNav" hidden>
+      <a href="index.html#vision">Vision</a>
+      <a href="index.html#chauffeurs">Chauffeurs</a>
+      <a href="index.html#entreprises">Entreprises</a>
+      <a href="offres.html">Offres</a>
+      <a href="index.html#contact">Contact</a>
+      <a href="../index.html#projets" class="nav-back">&larr; Portfolio</a>
+    </div>
+
+    <main>
+      <!-- En-tête de page -->
+      <section class="offers-hero">
+        <div class="section-inner">
+          <p class="section-label">05 — Missions</p>
+          <h1 class="section-title">Les offres <em>du moment</em></h1>
+          <p class="section-text">
+            Toutes nos offres sont des missions en CDD. Trouvez celle qui correspond à votre permis et à votre
+            région : le salaire net de la mission est affiché sur chaque offre.
+          </p>
+          <p class="demo-note">
+            Démonstration : les offres et entreprises ci-dessous sont fictives, et aucune candidature n'est
+            envoyée.
+          </p>
+        </div>
+      </section>
+
+      <!-- Filtres -->
+      <section class="offers-filters" aria-label="Filtrer les offres">
+        <form class="filters-form" id="filtersForm" novalidate>
+          <div class="filter-field filter-search">
+            <label for="fSearch">Recherche</label>
+            <input
+              type="search"
+              id="fSearch"
+              name="recherche"
+              placeholder="Poste, entreprise, ville…"
+              autocomplete="off"
+            />
+          </div>
+
+          <div class="filter-field">
+            <label for="fRegion">Région</label>
+            <select id="fRegion" name="region">
+              <option value="">Toutes les régions</option>
+            </select>
+          </div>
+
+          <div class="filter-field">
+            <label for="fPermis">Mon permis</label>
+            <select id="fPermis" name="permis">
+              <option value="">Tous les permis</option>
+              <option value="C">Permis C (porteur)</option>
+              <option value="CE">Permis CE (ensemble articulé)</option>
+            </select>
+          </div>
+
+          <div class="filter-field">
+            <label for="fTri">Trier par</label>
+            <select id="fTri" name="tri">
+              <option value="recent">Plus récentes</option>
+              <option value="salaire">Salaire net le plus élevé</option>
+            </select>
+          </div>
+
+          <button type="reset" class="btn btn-outline filter-reset" id="resetBtn">Réinitialiser</button>
+        </form>
+      </section>
+
+      <!-- Résultats -->
+      <section class="offers-results">
+        <div class="section-inner">
+          <p class="results-count" id="resultsCount" role="status" aria-live="polite"></p>
+          <div class="offers-grid" id="offersGrid"></div>
+          <div class="no-results" id="noResults" hidden>
+            <p>Aucune mission ne correspond à votre recherche.</p>
+            <button type="button" class="btn btn-primary" id="noResultsReset">Voir toutes les offres</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Message de confirmation (démo) -->
+    <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <a href="index.html" class="logo footer-logo">
+          <span class="logo-mark">LT</span>
+          <span class="logo-text">LINK<span class="logo-accent">TRUCK</span></span>
+        </a>
+        <p class="footer-tagline">Transport routier de marchandises — connecté à l'excellence.</p>
+        <nav class="footer-nav" aria-label="Liens pied de page">
+          <a href="index.html#vision">Vision</a>
+          <a href="index.html#chauffeurs">Chauffeurs</a>
+          <a href="index.html#entreprises">Entreprises</a>
+          <a href="index.html#contact">Contact</a>
+        </nav>
+        <p class="footer-copy">© 2026 LinkTruck. Tous droits réservés.</p>
+      </div>
+    </footer>
+
+    <script src="scripts/offres.js"></script>
+  </body>
+</html>

@@ -1,0 +1,349 @@
+/* LinkTruck — page « Offres de missions »
+   Réutilise les variables de main.css (--gold, --black, --font-display…) */
+
+/* ---------- En-tête de page ---------- */
+.offers-hero {
+  padding: calc(var(--header-h) + 3.5rem) clamp(1.25rem, 4vw, 3rem) 2rem;
+  background:
+    radial-gradient(ellipse 60% 80% at 80% 0%, rgba(139, 38, 53, 0.18), transparent 60%),
+    linear-gradient(180deg, var(--black-soft) 0%, var(--black) 100%);
+  border-bottom: 1px solid rgba(201, 168, 76, 0.12);
+}
+
+.demo-note {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.75rem;
+  color: var(--gold-light);
+  border: 1px dashed var(--gold-dim);
+}
+
+.nav .nav-current {
+  color: var(--gold);
+}
+
+/* ---------- Filtres ---------- */
+.offers-filters {
+  position: sticky;
+  top: var(--header-h);
+  z-index: 50;
+  padding: 1.25rem clamp(1.25rem, 4vw, 3rem);
+  background: rgba(12, 12, 12, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+}
+
+.filters-form {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  align-items: end;
+}
+
+.filter-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.filter-field label {
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.filter-field input,
+.filter-field select {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.25s;
+}
+
+.filter-field input:focus,
+.filter-field select:focus {
+  border-color: var(--gold);
+}
+
+.filter-field select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='%23c9a84c'%3E%3Cpath d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+}
+
+.filter-field option {
+  background: var(--black);
+}
+
+.filter-reset {
+  padding: 0.85rem 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .filters-form {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .filter-search {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (min-width: 1100px) {
+  .filters-form {
+    grid-template-columns: 1.6fr repeat(3, 1fr) auto;
+  }
+  .filter-search {
+    grid-column: auto;
+  }
+}
+
+/* Sur petit écran la barre de filtres ne reste pas collée (trop haute) */
+@media (max-width: 899px) {
+  .offers-filters {
+    position: static;
+  }
+}
+
+/* ---------- Résultats ---------- */
+.offers-results {
+  padding: 2.5rem clamp(1.25rem, 4vw, 3rem) clamp(4rem, 10vw, 7rem);
+  min-height: 60vh;
+}
+
+.results-count {
+  margin-bottom: 1.5rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--white-dim);
+}
+
+.results-count strong {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.offers-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .offers-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1100px) {
+  .offers-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ---------- Carte d'offre ---------- */
+.offer-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.75rem 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.02);
+  transition: border-color 0.35s, transform 0.35s var(--ease-out);
+  animation: cardIn 0.5s var(--ease-out) both;
+}
+
+.offer-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-4px);
+}
+
+@keyframes cardIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.offer-top {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.badge {
+  padding: 0.3rem 0.7rem;
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.badge-gold {
+  background: var(--gold);
+  color: var(--black);
+}
+
+.badge-outline {
+  border: 1px solid rgba(201, 168, 76, 0.4);
+  color: var(--gold-light);
+}
+
+.offer-title {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  line-height: 1.1;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.4rem;
+}
+
+.offer-company {
+  font-size: 0.85rem;
+  color: var(--white-dim);
+  margin-bottom: 1rem;
+}
+
+.offer-meta {
+  list-style: none;
+  display: grid;
+  gap: 0.35rem;
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+  color: var(--white-dim);
+}
+
+.offer-meta strong {
+  color: var(--white);
+  font-weight: 500;
+}
+
+.offer-salary {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  letter-spacing: 0.06em;
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+
+.offer-desc {
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: var(--white-dim);
+  margin-bottom: 1rem;
+}
+
+.offer-details {
+  margin-bottom: 1rem;
+  padding: 1rem 1.1rem;
+  border-left: 2px solid var(--gold);
+  background: rgba(201, 168, 76, 0.05);
+}
+
+.offer-details[hidden] {
+  display: none;
+}
+
+.offer-details h4 {
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.6rem;
+}
+
+.offer-details ul {
+  list-style: none;
+  display: grid;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  color: var(--white-dim);
+}
+
+.offer-details li::before {
+  content: "— ";
+  color: var(--gold);
+}
+
+.offer-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: auto;
+  padding-top: 0.5rem;
+}
+
+.offer-actions .btn {
+  padding: 0.8rem 1.25rem;
+}
+
+.btn:focus-visible,
+.nav a:focus-visible,
+.filter-field input:focus-visible,
+.filter-field select:focus-visible {
+  outline: 2px solid var(--gold-light);
+  outline-offset: 2px;
+}
+
+/* ---------- Aucun résultat ---------- */
+.no-results {
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+.no-results[hidden] {
+  display: none;
+}
+
+.no-results p {
+  margin-bottom: 1.5rem;
+  color: var(--white-dim);
+}
+
+/* ---------- Message de confirmation ---------- */
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 1.5rem;
+  z-index: 200;
+  width: min(92vw, 520px);
+  transform: translateX(-50%);
+  padding: 1rem 1.25rem;
+  background: var(--black-panel);
+  border: 1px solid var(--gold);
+  font-size: 0.85rem;
+  color: var(--white);
+  text-align: center;
+  animation: cardIn 0.4s var(--ease-out) both;
+}
+
+.toast[hidden] {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .offer-card,
+  .toast {
+    animation: none;
+  }
+  .offer-card {
+    transition: none;
+  }
+}
