@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio de Camille — développeuse web en reconversion, projets HTML, CSS et JavaScript.">
+    <title>Portfolio — Camille</title>
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="portfolio.css">
+</head>
+<body>
+    <header class="site-header">
+        <a href="portfolio.html" class="site-logo" aria-current="page">Camille — Portfolio</a>
+        <nav class="site-nav" aria-label="Navigation principale">
+            <a href="portfolio.html" aria-current="page">Accueil</a>
+            <a href="#projets">Projets</a>
+            <a href="#competences">Compétences</a>
+            <a href="apropos.html">À propos</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <div class="scene">
+        <div class="content">
+            <h1>Bienvenue sur mon portfolio</h1>
+            <p>Ce site est un espace d'apprentissage où je développe mes compétences en HTML, CSS et JavaScript.</p>
+            <p>Tout commence par les fondations...</p>
+            <ul class="hero-links">
+                <li><a href="apropos.html">À propos</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#projets">Voir mes projets</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="parallax parallax-1" role="presentation" aria-hidden="true"></div>
+
+    <section id="projets" class="section-content">
+        <h2 class="section-title">Mes projets</h2>
+        <div class="project-grid">
+            <a href="projet1.html" class="section-card section-card--featured">
+                <h3>Projet 1 — LinkTruck</h3>
+                <p>Plateforme transport routier — <strong>2 versions</strong> : première démo (v1) et site premium (v2).</p>
+                <span class="card-tags">
+                    <span class="tag tag--v1">v1</span>
+                    <span class="tag tag--v2">v2 premium</span>
+                </span>
+            </a>
+            <a href="projet1truckcopie.html" class="section-card section-card--v1">
+                <span class="version-badge version-badge--v1">v1</span>
+                <h3>LinkTruck — Version 1</h3>
+                <p>Première démo HTML/CSS, pages entreprise et chauffeur.</p>
+            </a>
+            <a href="linktruck-v2/index.html" class="section-card section-card--v2">
+                <span class="version-badge version-badge--v2">v2</span>
+                <h3>LinkTruck — Version 2</h3>
+                <p>Refonte premium : animations, responsive, JavaScript et API contact.</p>
+            </a>
+            <a href="linktruck-mobile/index.html" class="section-card">
+                <h3>Projet 2 — LinkTruck Mobile</h3>
+                <p>Interface mobile style Resident Evil — sombre, dramatique, camion sur la carte.</p>
+            </a>
+            <a href="projet3.html" class="section-card section-card--featured">
+                <h3>Projet 3 — Movewell</h3>
+                <p>Application de sport adaptatif — présentation et captures d'écran.</p>
+            </a>
+            <a href="projet4.html" class="section-card">
+                <h3>Projet 4 — Sites Vitrines WordPress </h3>
+                <p>Création de sites web professionnels avec WordPress et Elementor.</p>
+                <p>Boulangerie et Pigment-studio ( salon de coiffure mixte)</p>
+            </a>
+        </div>
+    </section>
+
+    <div class="parallax parallax-2" role="presentation" aria-hidden="true"></div>
+
+    <section id="competences" class="section-content">
+        <div class="section-card section-card--static">
+            <h2>Mes compétences</h2>
+            <ul class="skills-list">
+                <li>HTML5 et structure sémantique</li>
+                <li>CSS3 — mise en page, animations, responsive</li>
+                <li>JavaScript — bases et interactions</li>
+                <li>Design responsive et accessibilité</li>
+                <li>Git et travail en autonomie</li>
+                <li>WordPress — développement de thèmes et extensions</li>
+                <li>Elementor — création de pages et modèles</li>
+                <li>Local WP</li>
+                <li>WPFORMS</li>
+                <li>Unsplash</li>
+                <li>Design UI (couleur, typographie, mise en page)</li>
+            </ul>
+        </div>
+    </section>
+
+    <div class="parallax parallax-3" role="presentation" aria-hidden="true"></div>
+
+    <footer class="site-footer">
+        <p>Portfolio en apprentissage — <a href="contact.html">Me contacter</a></p>
+    </footer>
+</body>
+</html>

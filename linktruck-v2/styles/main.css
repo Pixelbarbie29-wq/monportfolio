@@ -835,3 +835,16 @@ body {
 .reveal:nth-child(4) {
   transition-delay: 0.24s;
 }
+
+/* Lien retour portfolio */
+.nav-back {
+  color: var(--gold) !important;
+  border: 1px solid var(--gold);
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+}
+
+.nav-back:hover {
+  background: var(--gold);
+  color: #000 !important;
+}

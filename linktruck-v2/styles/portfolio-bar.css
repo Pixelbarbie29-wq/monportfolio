@@ -26,6 +26,24 @@
     text-decoration: underline;
 }
 
+.portfolio-back-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #c9a84c, #e8d48a);
+    color: #050505;
+    box-shadow: 0 6px 20px rgba(201, 168, 76, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.portfolio-back-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(201, 168, 76, 0.3);
+    text-decoration: none;
+}
+
 .portfolio-demo-bar strong {
     color: #fff;
     font-weight: 600;

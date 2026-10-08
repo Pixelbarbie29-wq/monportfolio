@@ -7,18 +7,22 @@
       name="description"
       content="LinkTruck — la plateforme premium qui connecte chauffeurs routiers et entreprises du transport routier de marchandises."
     />
-    <title>LinkTruck — Transport routier de marchandises</title>
+    <title>LinkTruck v2 — Version premium</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://.googleapis.com/cssfonts2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/portfolio-bar.css" />
   </head>
-  <body>
-    <a href="../index.html" style="position:fixed;top:72px;left:50%;transform:translateX(-50%);z-index:9999;display:inline-flex;align-items:center;gap:6px;padding:8px 16px;background:rgba(0,0,0,0.65);color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,0.35);border-radius:20px;font-family:sans-serif;font-size:13px;backdrop-filter:blur(6px);">← Retour au portfolio</a>
-
+  <body class="has-portfolio-bar">
+    <div class="portfolio-demo-bar">
+      <a href="../portfolio.html#projets" class="portfolio-back-btn">← Revenir au portfolio</a>
+      <span><strong>LinkTruck</strong> — Version 2</span>
+      <a href="../projet1truckcopie.html">Voir la v1</a>
+    </div>
     <div class="grain" aria-hidden="true"></div>
 
     <header class="header" id="header">
@@ -32,6 +36,7 @@
         <a href="#entreprises">Entreprises</a>
         <a href="#services">Services</a>
         <a href="#contact">Contact</a>
+        <a href="../index.html#projets" class="nav-back">&larr; Portfolio</a>
       </nav>
       <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false">
         <span></span><span></span>
@@ -44,6 +49,7 @@
       <a href="#entreprises">Entreprises</a>
       <a href="#services">Services</a>
       <a href="#contact">Contact</a>
+      <a href="../index.html#projets" class="nav-back">&larr; Portfolio</a>
     </div>
 
     <main>

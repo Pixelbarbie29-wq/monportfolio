@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Projet 3 — IA Daily Assistant, assistant intelligent en développement.">
-    <title>Projet 3 — IA Daily Assistant</title>
+    <meta name="description" content="Projet 3 — Movewell, application de sport adaptatif et bien-être.">
+    <title>Projet 3 — Movewell</title>
     <link rel="stylesheet" href="common.css">
     <link rel="stylesheet" href="projet3.css">
 </head>
@@ -12,37 +12,45 @@
     <header class="site-header">
         <a href="index.html" class="site-logo">Camille — Portfolio</a>
         <nav class="site-nav" aria-label="Navigation principale">
-            <a href="index.html">Accueil</a>
-            <a href="index.html#projets">Projets</a>
+            <a href="portfolio.html">Accueil</a>
+            <a href="portfolio.html#projets">Projets</a>
             <a href="apropos.html">À propos</a>
             <a href="contact.html">Contact</a>
         </nav>
     </header>
 
-    <main class="page-main">
-        <h1>IA Daily Assistant</h1>
-        <div class="page-card">
-            <p>Ce projet est en cours de développement. Il s'agit d'un assistant basé sur l'intelligence artificielle, conçu pour aider les utilisateurs et les professionnels dans leurs tâches quotidiennes grâce à l'automatisation et à un développement adaptatif qui apprend en continu.</p>
-
-            <h2>Objectifs du projet</h2>
-            <p>Créer un assistant intelligent capable de comprendre et d'exécuter des tâches variées, de la gestion de l'agenda à la fourniture d'informations en temps réel.</p>
-
-            <h2>Fonctionnalités prévues</h2>
+    <main class="page-main page-main--movewell">
+        <h1>Projet 3 — Movewell</h1>
+        <div class="page-card movewell-intro">
+            <p><strong>Movewell</strong> est une application de sport adaptatif et de bien-être : elle propose des séances personnalisées selon l'humeur, le niveau d'énergie et le temps disponible de chaque utilisatrice.</p>
             <ul>
-                <li>Gestion de l'agenda et des rappels</li>
-                <li>Réponses aux questions générales</li>
-                <li>Automatisation des tâches répétitives</li>
-                <li>Apprentissage continu pour améliorer les performances</li>
+                <li>Création de compte et connexion (Supabase)</li>
+                <li>Séances adaptées : douceur, mood, énergie, maternité</li>
+                <li>Minuteur intégré, badges et historique des séances</li>
+                <li>Interface mobile-first · React + Vite, Capacitor</li>
             </ul>
-
-            <h2>Technologies envisagées</h2>
-            <p>Python, frameworks d'IA et API pour développer les fonctionnalités de l'assistant.</p>
-
-            <h2>État actuel</h2>
-            <p>Le développement est en cours, avec une première version prototype prévue prochainement.</p>
-
-            <p class="text-center"><a href="index.html#projets" class="btn-primary">Retour aux projets</a></p>
         </div>
+
+        <section class="shots" aria-label="Captures d'écran de Movewell">
+            <h2>Captures d'écran</h2>
+            <figure class="shot shot--wide">
+                <img src="images/movewell-connexion.jpg" alt="Movewell — écran de création de compte" loading="lazy">
+                <figcaption>Création de compte / connexion</figcaption>
+            </figure>
+            <div class="shots-row">
+                <figure class="shot">
+                    <img src="images/movewell-accueil.jpg" alt="Movewell — accueil avec les séances proposées" loading="lazy">
+                    <figcaption>Accueil : choix de la séance</figcaption>
+                </figure>
+                <figure class="shot">
+                    <img src="images/movewell-seance.jpg" alt="Movewell — séance accomplie et badge débloqué" loading="lazy">
+                    <figcaption>Fin de séance et badge débloqué</figcaption>
+                </figure>
+            </div>
+            <p class="text-center page-actions">
+                <a href="portfolio.html#projets" class="btn-primary">Retour aux projets</a>
+            </p>
+        </section>
     </main>
 
     <footer class="site-footer">
