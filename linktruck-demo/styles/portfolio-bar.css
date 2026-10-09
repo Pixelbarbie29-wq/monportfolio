@@ -1,0 +1,66 @@
+.portfolio-demo-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 10px 20px;
+    background: rgba(11, 29, 57, 0.95);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    font-family: "Inter", system-ui, sans-serif;
+    font-size: 0.85rem;
+    color: #c7daf9;
+}
+
+.portfolio-demo-bar a {
+    color: #e8f3ff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.portfolio-demo-bar a:hover {
+    text-decoration: underline;
+}
+
+.portfolio-back-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #c9a84c, #e8d48a);
+    color: #050505;
+    box-shadow: 0 6px 20px rgba(201, 168, 76, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.portfolio-back-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(201, 168, 76, 0.3);
+    text-decoration: none;
+}
+
+.portfolio-demo-bar strong {
+    color: #fff;
+    font-weight: 600;
+}
+
+body.has-portfolio-bar {
+    --portfolio-bar-h: 44px;
+}
+
+body.has-portfolio-bar .header {
+    top: var(--portfolio-bar-h);
+}
+
+body.has-portfolio-bar .hero {
+    padding-top: calc(var(--header-h, 72px) + var(--portfolio-bar-h) + 3rem);
+}
+
+body.has-portfolio-bar .mobile-nav {
+    top: calc(var(--header-h, 72px) + var(--portfolio-bar-h));
+}

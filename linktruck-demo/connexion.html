@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Connectez-vous à votre espace LinkTruck, chauffeur ou entreprise." />
+    <meta name="robots" content="noindex" />
+    <title>Connexion — LinkTruck</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/espace.css" />
+    <link rel="stylesheet" href="styles/portfolio-bar.css" />
+    <link rel="stylesheet" href="styles/demo.css" />
+  </head>
+  <body data-page="connexion" class="has-portfolio-bar">
+    <div class="portfolio-demo-bar">
+      <a href="../portfolio.html#projets" class="portfolio-back-btn">← Revenir au portfolio</a>
+      <span class="demo-label"><strong>LinkTruck</strong> — démo : rien n’est envoyé, tout reste dans votre navigateur</span>
+      <span class="demo-actions" id="demoActions"></span>
+    </div>
+    <div class="grain" aria-hidden="true"></div>
+
+    <header class="header scrolled" id="header">
+      <a href="../linktruck-v2/index.html" class="logo" aria-label="LinkTruck — accueil">
+        <span class="logo-mark">LT</span>
+        <span class="logo-text">LINK<span class="logo-accent">TRUCK</span></span>
+      </a>
+      <nav class="nav" aria-label="Navigation principale">
+        <a href="../linktruck-v2/index.html#vision">Vision</a>
+        <a href="../linktruck-v2/index.html#chauffeurs">Chauffeurs</a>
+        <a href="../linktruck-v2/index.html#entreprises">Entreprises</a>
+        <a href="../linktruck-v2/offres.html">Offres</a>
+        <a href="../linktruck-v2/index.html#contact">Contact</a>
+        <a href="connexion.html" class="nav-current" aria-current="page">Connexion</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </header>
+
+    <div class="mobile-nav" id="mobileNav" hidden>
+      <a href="../linktruck-v2/index.html#vision">Vision</a>
+      <a href="../linktruck-v2/index.html#chauffeurs">Chauffeurs</a>
+      <a href="../linktruck-v2/index.html#entreprises">Entreprises</a>
+      <a href="../linktruck-v2/offres.html">Offres</a>
+      <a href="../linktruck-v2/index.html#contact">Contact</a>
+      <a href="connexion.html">Connexion</a>
+    </div>
+
+    <main>
+      <section class="page-hero">
+        <div class="section-inner">
+          <p class="section-label">06 — Votre espace</p>
+          <h1 class="section-title">Bon <em>retour</em></h1>
+          <p class="section-text">Connectez-vous pour suivre votre dossier et envoyer vos documents.</p>
+        </div>
+      </section>
+
+      <section class="auth-section">
+        <div class="auth-center">
+          <div class="panel">
+            <h2>Connexion</h2>
+            <p class="sous">Chauffeur ou entreprise.</p>
+            <form class="auth-form" id="formConnexion" novalidate>
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" autocomplete="username" required />
+              </div>
+              <div class="field">
+                <label for="password">Mot de passe</label>
+                <input id="password" name="password" type="password" autocomplete="current-password" required />
+              </div>
+              <p class="form-error" id="formError" role="alert" hidden></p>
+              <button type="submit" class="btn btn-primary" id="submitBtn">Se connecter</button>
+            </form>
+            <p class="alt">Pas encore de compte ? <a href="inscription.html">S'inscrire</a></p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <a href="../linktruck-v2/index.html" class="logo footer-logo">
+          <span class="logo-mark">LT</span>
+          <span class="logo-text">LINK<span class="logo-accent">TRUCK</span></span>
+        </a>
+        <p class="footer-tagline">Transport routier de marchandises — connecté à l'excellence.</p>
+        <nav class="footer-nav" aria-label="Liens pied de page">
+          <a href="../linktruck-v2/index.html#vision">Vision</a>
+          <a href="../linktruck-v2/index.html#chauffeurs">Chauffeurs</a>
+          <a href="../linktruck-v2/index.html#entreprises">Entreprises</a>
+          <a href="../linktruck-v2/index.html#contact">Contact</a>
+        </nav>
+        <p class="footer-copy">© 2026 LinkTruck. Tous droits réservés.</p>
+      </div>
+    </footer>
+
+    <script src="scripts/demo-api.js"></script>
+    <script src="scripts/espace.js"></script>
+  </body>
+</html>

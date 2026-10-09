@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Créez votre compte LinkTruck, chauffeur routier ou entreprise de transport, et envoyez vos documents pour validation." />
+    <meta name="robots" content="noindex" />
+    <title>Inscription — LinkTruck</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/espace.css" />
+    <link rel="stylesheet" href="styles/portfolio-bar.css" />
+    <link rel="stylesheet" href="styles/demo.css" />
+  </head>
+  <body data-page="inscription" class="has-portfolio-bar">
+    <div class="portfolio-demo-bar">
+      <a href="../portfolio.html#projets" class="portfolio-back-btn">← Revenir au portfolio</a>
+      <span class="demo-label"><strong>LinkTruck</strong> — démo : rien n’est envoyé, tout reste dans votre navigateur</span>
+      <span class="demo-actions" id="demoActions"></span>
+    </div>
+    <div class="grain" aria-hidden="true"></div>
+
+    <header class="header scrolled" id="header">
+      <a href="../linktruck-v2/index.html" class="logo" aria-label="LinkTruck — accueil">
+        <span class="logo-mark">LT</span>
+        <span class="logo-text">LINK<span class="logo-accent">TRUCK</span></span>
+      </a>
+      <nav class="nav" aria-label="Navigation principale">
+        <a href="../linktruck-v2/index.html#vision">Vision</a>
+        <a href="../linktruck-v2/index.html#chauffeurs">Chauffeurs</a>
+        <a href="../linktruck-v2/index.html#entreprises">Entreprises</a>
+        <a href="../linktruck-v2/offres.html">Offres</a>
+        <a href="../linktruck-v2/index.html#contact">Contact</a>
+        <a href="connexion.html">Connexion</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </header>
+
+    <div class="mobile-nav" id="mobileNav" hidden>
+      <a href="../linktruck-v2/index.html#vision">Vision</a>
+      <a href="../linktruck-v2/index.html#chauffeurs">Chauffeurs</a>
+      <a href="../linktruck-v2/index.html#entreprises">Entreprises</a>
+      <a href="../linktruck-v2/offres.html">Offres</a>
+      <a href="../linktruck-v2/index.html#contact">Contact</a>
+      <a href="connexion.html">Connexion</a>
+    </div>
+
+    <main>
+      <section class="page-hero hero-visuel-wrap" id="hero" data-profil="chauffeur">
+        <div class="hero-visuel" data-v="chauffeur" aria-hidden="true"></div>
+        <div class="hero-visuel" data-v="entreprise" aria-hidden="true"></div>
+        <figure class="hero-carte" aria-hidden="true">
+          <img src="https://images.unsplash.com/photo-1681505531034-8d67054e07f6?w=900&q=80&auto=format&fit=crop" alt="" loading="lazy" />
+          <figcaption>Contrat de mission · CDD</figcaption>
+        </figure>
+        <div class="section-inner hero-texte">
+          <p class="section-label" id="heroLabel"></p>
+          <h1 class="section-title" id="heroTitre"></h1>
+          <p class="section-text" id="heroTexte"></p>
+
+          <div class="profil-switch" role="group" aria-label="Votre profil">
+            <button type="button" data-profil="chauffeur" aria-pressed="true"><span aria-hidden="true">◎</span> Je suis chauffeur</button>
+            <button type="button" data-profil="entreprise" aria-pressed="false"><span aria-hidden="true">▣</span> Je suis une entreprise</button>
+          </div>
+
+          <p class="hero-lien" id="heroLien"><a href="../linktruck-v2/offres.html">Voir les offres sans créer de compte&nbsp;→</a></p>
+          <ol class="steps" id="heroEtapes" aria-label="Les trois étapes"></ol>
+        </div>
+      </section>
+
+      <section class="auth-section">
+        <div class="auth-grid deux">
+          <div class="panel">
+            <datalist id="regions">
+              <option value="Auvergne-Rhône-Alpes"></option>
+              <option value="Bourgogne-Franche-Comté"></option>
+              <option value="Bretagne"></option>
+              <option value="Centre-Val de Loire"></option>
+              <option value="Corse"></option>
+              <option value="Grand Est"></option>
+              <option value="Hauts-de-France"></option>
+              <option value="Île-de-France"></option>
+              <option value="Normandie"></option>
+              <option value="Nouvelle-Aquitaine"></option>
+              <option value="Occitanie"></option>
+              <option value="Pays de la Loire"></option>
+              <option value="Provence-Alpes-Côte d'Azur"></option>
+            </datalist>
+
+            <!-- ===== Chauffeur : 3 petites étapes ===== -->
+            <form class="auth-form" id="formChauffeur" novalidate>
+              <input class="piege" type="text" name="site_web" tabindex="-1" autocomplete="off" aria-hidden="true" />
+              <ol class="points" id="points" aria-label="Progression">
+                <li><span>1</span>Vous</li>
+                <li><span>2</span>Votre permis</li>
+                <li><span>3</span>Votre compte</li>
+              </ol>
+              <h2 id="etapeTitre" class="etape-titre"></h2>
+
+              <fieldset class="etape" data-etape="1">
+                <legend class="sr-only">Parlons de vous</legend>
+                <div class="field">
+                  <label for="c-nom">Prénom et nom</label>
+                  <input id="c-nom" name="nom" type="text" autocomplete="name" maxlength="120" required />
+                </div>
+                <div class="row deux">
+                  <div class="field">
+                    <label for="c-ville">Votre ville</label>
+                    <input id="c-ville" name="ville" type="text" autocomplete="address-level2" maxlength="80" required />
+                  </div>
+                  <div class="field">
+                    <label for="c-region">Votre région</label>
+                    <input id="c-region" name="region" type="text" list="regions" autocomplete="off" maxlength="80" required />
+                  </div>
+                </div>
+              </fieldset>
+
+              <fieldset class="etape" data-etape="2" hidden>
+                <legend class="sr-only">Votre permis</legend>
+                <p class="invite">Choisissez votre permis : vous verrez les missions qui vous correspondent.</p>
+                <div class="choix-permis">
+                  <label class="choix">
+                    <input type="radio" name="permis" value="CE" class="sr-only" checked />
+                    <span class="carte"><strong>CE</strong><span>Ensemble articulé (SPL)<br />Missions C et CE</span></span>
+                  </label>
+                  <label class="choix">
+                    <input type="radio" name="permis" value="C" class="sr-only" />
+                    <span class="carte"><strong>C</strong><span>Porteur<br />Missions C</span></span>
+                  </label>
+                </div>
+                <div class="field">
+                  <label for="c-presentation">Une phrase sur vous (facultatif)</label>
+                  <textarea id="c-presentation" name="presentation" maxlength="500" placeholder="Votre expérience, ce que vous aimez conduire… Les entreprises la liront."></textarea>
+                  <small>500 caractères maximum.</small>
+                </div>
+              </fieldset>
+
+              <fieldset class="etape" data-etape="3" hidden>
+                <legend class="sr-only">Votre compte</legend>
+                <div class="row deux">
+                  <div class="field">
+                    <label for="c-email">Email</label>
+                    <input id="c-email" name="email" type="email" autocomplete="email" maxlength="254" required />
+                  </div>
+                  <div class="field">
+                    <label for="c-telephone">Téléphone</label>
+                    <input id="c-telephone" name="telephone" type="tel" autocomplete="tel" maxlength="20" required />
+                  </div>
+                </div>
+                <div class="row deux">
+                  <div class="field">
+                    <label for="c-password">Mot de passe</label>
+                    <input id="c-password" name="password" type="password" autocomplete="new-password" minlength="10" maxlength="72" required />
+                    <small>10 caractères minimum.</small>
+                  </div>
+                  <div class="field">
+                    <label for="c-password2">Confirmer</label>
+                    <input id="c-password2" name="password2" type="password" autocomplete="new-password" maxlength="72" required />
+                  </div>
+                </div>
+                <label class="consent">
+                  <input type="checkbox" id="c-accepte" name="accepte" />
+                  <span>J'accepte que LinkTruck conserve mes documents pour vérifier mon dossier. Ils ne sont consultables que par l'équipe LinkTruck.</span>
+                </label>
+              </fieldset>
+
+              <p class="form-error" id="erreurChauffeur" role="alert" hidden></p>
+              <div class="nav-etapes">
+                <button type="button" class="btn btn-outline" id="retour" hidden>Retour</button>
+                <button type="button" class="btn btn-primary" id="suivant">Continuer</button>
+                <button type="submit" class="btn btn-primary" id="submitChauffeur" hidden>Créer mon compte</button>
+              </div>
+            </form>
+
+            <!-- ===== Entreprise : un seul formulaire, plus formel ===== -->
+            <form class="auth-form" id="formEntreprise" novalidate hidden>
+              <input class="piege" type="text" name="site_web" tabindex="-1" autocomplete="off" aria-hidden="true" />
+              <h2 class="etape-titre">Votre société</h2>
+              <p class="sous">Tous les champs sont obligatoires.</p>
+              <div class="row deux">
+                <div class="field">
+                  <label for="e-nom">Raison sociale</label>
+                  <input id="e-nom" name="nom" type="text" autocomplete="organization" maxlength="120" required />
+                </div>
+                <div class="field">
+                  <label for="e-siret">SIRET</label>
+                  <input id="e-siret" name="siret" type="text" inputmode="numeric" autocomplete="off" placeholder="14 chiffres" maxlength="20" required />
+                </div>
+              </div>
+              <div class="row deux">
+                <div class="field">
+                  <label for="e-ville">Ville</label>
+                  <input id="e-ville" name="ville" type="text" autocomplete="address-level2" maxlength="80" required />
+                </div>
+                <div class="field">
+                  <label for="e-region">Région</label>
+                  <input id="e-region" name="region" type="text" list="regions" autocomplete="off" maxlength="80" required />
+                </div>
+              </div>
+              <div class="row deux">
+                <div class="field">
+                  <label for="e-email">Email professionnel</label>
+                  <input id="e-email" name="email" type="email" autocomplete="email" maxlength="254" required />
+                </div>
+                <div class="field">
+                  <label for="e-telephone">Téléphone</label>
+                  <input id="e-telephone" name="telephone" type="tel" autocomplete="tel" maxlength="20" required />
+                </div>
+              </div>
+              <div class="row deux">
+                <div class="field">
+                  <label for="e-password">Mot de passe</label>
+                  <input id="e-password" name="password" type="password" autocomplete="new-password" minlength="10" maxlength="72" required />
+                  <small>10 caractères minimum.</small>
+                </div>
+                <div class="field">
+                  <label for="e-password2">Confirmer le mot de passe</label>
+                  <input id="e-password2" name="password2" type="password" autocomplete="new-password" maxlength="72" required />
+                </div>
+              </div>
+              <label class="consent">
+                <input type="checkbox" id="e-accepte" name="accepte" />
+                <span>J'accepte que LinkTruck conserve les documents de mon entreprise pour vérifier mon dossier. Ils ne sont consultables que par l'équipe LinkTruck.</span>
+              </label>
+              <p class="form-error" id="erreurEntreprise" role="alert" hidden></p>
+              <button type="submit" class="btn btn-primary" id="submitEntreprise">Créer le compte de ma société</button>
+            </form>
+
+            <p class="alt">Déjà inscrit ? <a href="connexion.html">Se connecter</a></p>
+          </div>
+
+          <aside class="panel docs-aside" aria-labelledby="docsTitre">
+            <h2 id="docsTitre">Documents à fournir</h2>
+            <p class="sous" id="docsSous"></p>
+            <p class="sous-label">Obligatoires</p>
+            <ol class="doc-list" id="docsRequis"></ol>
+            <div id="docsCertBloc" hidden>
+              <p class="sous-label">Habilitations (facultatif)</p>
+              <ul class="doc-list" id="docsCert"></ul>
+            </div>
+            <p class="sous autres-note">Et tout autre document utile, en pièce jointe (jusqu'à 5).</p>
+            <details id="docsFacBloc">
+              <summary>Documents facultatifs</summary>
+              <ul id="docsFac"></ul>
+            </details>
+            <p class="format-note">Formats acceptés : PDF, JPG ou PNG — 5 Mo maximum par fichier.</p>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <a href="../linktruck-v2/index.html" class="logo footer-logo">
+          <span class="logo-mark">LT</span>
+          <span class="logo-text">LINK<span class="logo-accent">TRUCK</span></span>
+        </a>
+        <p class="footer-tagline">Transport routier de marchandises — connecté à l'excellence.</p>
+        <nav class="footer-nav" aria-label="Liens pied de page">
+          <a href="../linktruck-v2/index.html#vision">Vision</a>
+          <a href="../linktruck-v2/index.html#chauffeurs">Chauffeurs</a>
+          <a href="../linktruck-v2/index.html#entreprises">Entreprises</a>
+          <a href="../linktruck-v2/index.html#contact">Contact</a>
+        </nav>
+        <p class="footer-copy">© 2026 LinkTruck. Tous droits réservés.</p>
+      </div>
+    </footer>
+
+    <script src="scripts/demo-api.js"></script>
+    <script src="scripts/espace.js"></script>
+  </body>
+</html>

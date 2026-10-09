@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Suivez votre dossier LinkTruck et envoyez vos documents." />
+    <meta name="robots" content="noindex" />
+    <title>Mon espace — LinkTruck</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/espace.css" />
+    <link rel="stylesheet" href="styles/portfolio-bar.css" />
+    <link rel="stylesheet" href="styles/demo.css" />
+  </head>
+  <body data-page="espace" class="has-portfolio-bar">
+    <div class="portfolio-demo-bar">
+      <a href="../portfolio.html#projets" class="portfolio-back-btn">← Revenir au portfolio</a>
+      <span class="demo-label"><strong>LinkTruck</strong> — démo : rien n’est envoyé, tout reste dans votre navigateur</span>
+      <span class="demo-actions" id="demoActions"></span>
+    </div>
+    <div class="grain" aria-hidden="true"></div>
+
+    <header class="header scrolled" id="header">
+      <a href="../linktruck-v2/index.html" class="logo" aria-label="LinkTruck — accueil">
+        <span class="logo-mark">LT</span>
+        <span class="logo-text">LINK<span class="logo-accent">TRUCK</span></span>
+      </a>
+      <nav class="nav" aria-label="Navigation principale">
+        <a href="../linktruck-v2/index.html#vision">Vision</a>
+        <a href="../linktruck-v2/index.html#chauffeurs">Chauffeurs</a>
+        <a href="../linktruck-v2/index.html#entreprises">Entreprises</a>
+        <a href="../linktruck-v2/offres.html">Offres</a>
+        <a href="../linktruck-v2/index.html#contact">Contact</a>
+        <button type="button" class="nav-logout" id="logoutBtn">Déconnexion</button>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </header>
+
+    <div class="mobile-nav" id="mobileNav" hidden>
+      <a href="../linktruck-v2/index.html#vision">Vision</a>
+      <a href="../linktruck-v2/index.html#chauffeurs">Chauffeurs</a>
+      <a href="../linktruck-v2/index.html#entreprises">Entreprises</a>
+      <a href="../linktruck-v2/offres.html">Offres</a>
+      <a href="../linktruck-v2/index.html#contact">Contact</a>
+      <a href="#" id="logoutMobile">Déconnexion</a>
+    </div>
+
+    <main>
+      <section class="page-hero">
+        <div class="section-inner">
+          <p class="section-label" id="espaceRole">06 — Mon espace</p>
+          <h1 class="section-title" id="espaceTitre">Mon <em>espace</em></h1>
+          <p class="section-text" id="espaceSous">Chargement de votre dossier…</p>
+        </div>
+      </section>
+
+      <section class="auth-section">
+        <div id="banniere" class="banner" hidden></div>
+        <div id="progression" class="progress" hidden></div>
+        <p class="sous-label bloc">Documents obligatoires</p>
+        <div class="doc-cards" id="docsRequis"></div>
+
+        <div class="bloc bloc-haut" id="certBloc" hidden>
+          <p class="sous-label">Habilitations (facultatif)</p>
+          <p class="intro-bloc">ADR, CACES… Envoyez celles que vous possédez : l'équipe LinkTruck les vérifie, comme vos autres documents.</p>
+          <div class="doc-cards" id="docsCert"></div>
+        </div>
+
+        <div class="bloc bloc-haut" id="autresBloc" hidden>
+          <p class="sous-label">Autres pièces jointes</p>
+          <p class="intro-bloc">Une autre habilitation, une attestation, une formation… ajoutez ce qui peut compléter votre dossier.</p>
+          <div class="doc-cards" id="docsAutres"></div>
+        </div>
+
+        <details class="facultatifs" id="facBloc" hidden>
+          <summary>Documents facultatifs</summary>
+          <div class="doc-cards" id="docsFac"></div>
+        </details>
+      </section>
+    </main>
+
+    <div class="toast-esp" id="toast" role="status" aria-live="polite" hidden></div>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <a href="../linktruck-v2/index.html" class="logo footer-logo">
+          <span class="logo-mark">LT</span>
+          <span class="logo-text">LINK<span class="logo-accent">TRUCK</span></span>
+        </a>
+        <p class="footer-tagline">Transport routier de marchandises — connecté à l'excellence.</p>
+        <nav class="footer-nav" aria-label="Liens pied de page">
+          <a href="../linktruck-v2/index.html#vision">Vision</a>
+          <a href="../linktruck-v2/index.html#chauffeurs">Chauffeurs</a>
+          <a href="../linktruck-v2/index.html#entreprises">Entreprises</a>
+          <a href="../linktruck-v2/index.html#contact">Contact</a>
+        </nav>
+        <p class="footer-copy">© 2026 LinkTruck. Tous droits réservés.</p>
+      </div>
+    </footer>
+
+    <script src="scripts/demo-api.js"></script>
+    <script src="scripts/espace.js"></script>
+  </body>
+</html>

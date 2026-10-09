@@ -24,12 +24,20 @@ HTML, CSS, JavaScript. Publication avec GitHub Pages.
 index.html, portfolio.html   pages d'accueil et de présentation des projets
 apropos.html, contact.html   pages « À propos » et « Contact »
 projet*.html                 une page par projet
-chauffeur.html, entreprise.html   pages LinkTruck « Pour les chauffeurs » et « Pour les entreprises »
 linktruck-v2/                LinkTruck web (pages, scripts, styles)
 linktruck-mobile/            LinkTruck mobile (pages, scripts, styles)
+linktruck-demo/              démo d'inscription et d'espace LinkTruck (voir ci-dessous)
 images/                      toutes les images du site
 common.css, portfolio.css    styles partagés
 ```
+
+## Démo d'inscription LinkTruck
+
+Le dossier `linktruck-demo/` reprend les pages d'inscription, de connexion et d'espace personnel du projet complet.
+Sans serveur, un faux serveur écrit en JavaScript (`scripts/demo-api.js`) répond à la place du vrai : les comptes
+sont gardés dans le navigateur du visiteur (localStorage), les mots de passe y sont hachés, et seul le nom des
+fichiers est conservé (jamais leur contenu). Deux boutons en haut de page simulent la validation ou le refus d'un
+document par l'équipe LinkTruck. L'outil d'administration n'est pas inclus.
 
 ## Notes
 
