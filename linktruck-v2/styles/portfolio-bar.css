@@ -64,3 +64,26 @@ body.has-portfolio-bar .hero {
 body.has-portfolio-bar .mobile-nav {
     top: calc(var(--header-h, 72px) + var(--portfolio-bar-h));
 }
+
+/* Téléphone : barre sur une seule ligne, à la hauteur prévue, pour ne pas recouvrir l'en-tête */
+@media (max-width: 640px) {
+    .portfolio-demo-bar {
+        box-sizing: border-box;
+        height: var(--portfolio-bar-h, 44px);
+        padding: 0 12px;
+        gap: 8px;
+        font-size: 0.75rem;
+    }
+
+    .portfolio-demo-bar > span {
+        display: none;
+    }
+
+    .portfolio-demo-bar a {
+        white-space: nowrap;
+    }
+
+    .portfolio-back-btn {
+        padding: 6px 12px;
+    }
+}
