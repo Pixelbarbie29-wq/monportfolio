@@ -19,12 +19,12 @@ body.page-linktruck {
     min-height: 100vh;
     font-family: var(--font-family, "Segoe UI", system-ui, sans-serif);
     color: var(--lt-text);
-    background: url('camion copie.avif') center/cover no-repeat fixed;
+    background: url('images/camion.avif') center/cover no-repeat fixed;
     position: relative;
 }
 
 body.page-linktruck.chauffeur-page {
-    background: url('transport-routier copie.jpg') center/cover no-repeat fixed;
+    background: url('images/transport-routier.jpg') center/cover no-repeat fixed;
 }
 
 body.page-linktruck::before {

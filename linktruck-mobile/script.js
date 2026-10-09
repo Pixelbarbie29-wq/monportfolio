@@ -26,7 +26,7 @@ const destinations = {
         percent: 36,
         truckLeft: "36%",
         label: "Ancienne base (v1)",
-        href: "../projet1truckcopie.html",
+        href: "../projet-linktruck.html",
     },
     v2: {
         percent: 64,

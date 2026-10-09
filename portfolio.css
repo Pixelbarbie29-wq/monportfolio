@@ -7,7 +7,7 @@ body {
     position: relative;
     width: 100%;
     overflow: hidden;
-    background: url('thelastofus2.jpg') center/cover no-repeat;
+    background: url('images/thelastofus2.jpg') center/cover no-repeat;
     height: min(80vh, 720px);
 }
 
@@ -77,15 +77,15 @@ body {
 }
 
 .parallax-1 {
-    background-image: url('transport-routier copie.jpg');
+    background-image: url('images/transport-routier.jpg');
 }
 
 .parallax-2 {
-    background-image: url('routes-mythiques-usa_91250.jpg');
+    background-image: url('images/routes-mythiques-usa.jpg');
 }
 
 .parallax-3 {
-    background-image: url('imagesai.jpeg');
+    background-image: url('images/imagesai.jpeg');
 }
 
 @media (max-width: 768px) {
@@ -110,12 +110,12 @@ body {
 }
 
 #projets {
-    background-image: url('transport-routier copie.jpg');
+    background-image: url('images/transport-routier.jpg');
     background-attachment: fixed;
 }
 
 #competences {
-    background-image: url('routes-mythiques-usa_91250.jpg');
+    background-image: url('images/routes-mythiques-usa.jpg');
     background-attachment: fixed;
 }
 
